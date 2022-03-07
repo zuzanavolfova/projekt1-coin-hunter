@@ -25,7 +25,7 @@ let scoreVypocet = 0;
 
 panacek.style.left = panacekX + 'px'
 panacek.style.top = panacekY + 'px'
-mince.style.left = Math.random() * 1000 + 'px'
+mince.style.left = Math.random() * 1000 + 'px' /*osetrit pohyb mince*/
 mince.style.top = Math.random() * 1000 + 'px'
 
 function pohyb(event, velikostPohybu) {
@@ -57,10 +57,12 @@ if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pana
     /*pricist bod*/
     scoreVypocet += 1;
     document.querySelector('#score').textContent = scoreVypocet;
-
     /*přesunout minci*/
-    minceX = Math.random() * 1000;
-    minceY = Math.random() * 1000;
-    mince.style.left = minceX + 'px'
-    mince.style.top = minceY + 'px'
+    mince.style.left = Math.random() * 1000 + 'px' /*osetrit pohyb mince*/
+    mince.style.top = Math.random() * 1000 + 'px'
+} else(console.log("mimo"))
+
+
+if (score === 6) {
+    alert('Posbíral jsi celý poklad')
 }
