@@ -23,29 +23,39 @@ let minceSirka = 20;
 let minceVyska = 20;
 let scoreVypocet = 0;
 
+let height = window.innerHeight;
+let width = window.innerWidth;
+
 panacek.style.left = panacekX + 'px'
 panacek.style.top = panacekY + 'px'
 mince.style.left = Math.random() * 1000 + 'px' /*osetrit pohyb mince*/
 mince.style.top = Math.random() * 1000 + 'px'
 
+/*osetrit, aby panacek nevylezl z herniho planu*/
+
 function pohyb(event, velikostPohybu) {
     if (event.keyCode === 40) {
+        /*dolu*/
         panacekX = panacekX;
         panacekY = panacekY + velikostPohybu;
         panacek.style.left = panacekX + 'px';
         panacek.style.top = panacekY + 'px';
+
     } else if (event.keyCode === 38) {
+        /*nahoru*/
         panacekX = panacekX;
         panacekY = panacekY - velikostPohybu;
         panacek.style.left = panacekX + 'px';
         panacek.style.top = panacekY + 'px';
     }
     if (event.keyCode === 37) {
+        /*doleva*/
         panacekX = panacekX - velikostPohybu;
         panacekY = panacekY;
         panacek.style.left = panacekX + 'px';
         panacek.style.top = panacekY + 'px';
     } else if (event.keyCode === 39) {
+        /*doprava*/
         panacekX = panacekX + velikostPohybu;
         panacekY = panacekY;
         panacek.style.left = panacekX + 'px';
