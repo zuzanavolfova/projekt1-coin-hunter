@@ -17,6 +17,10 @@ let panacekY = 400;
 
 let minceX = 100;
 let minceY = 200;
+
+let maxX = window.screen.availWidth;
+let maxY = window.screen.availHeight;
+
 let panacekSirka = 50;
 let panacekVyska = 20;
 let minceSirka = 20;
@@ -34,33 +38,41 @@ mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
 /*osetrit, aby panacek nevylezl z herniho planu*/
 
 function pohyb(event, velikostPohybu) {
-    if (event.keyCode === 40) {
-        /*dolu*/
-        panacekX = panacekX;
-        panacekY = panacekY + velikostPohybu;
-        panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px';
+    if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
+        if (event.keyCode === 40) {
+            /*dolu*/
+            panacekX = panacekX;
+            panacekY = panacekY + velikostPohybu;
+            panacek.style.left = panacekX + 'px';
+            panacek.style.top = panacekY + 'px';
 
 
-    } else if (event.keyCode === 38) {
-        /*nahoru*/
-        panacekX = panacekX;
-        panacekY = panacekY - velikostPohybu;
+        } else if (event.keyCode === 38) {
+            /*nahoru*/
+            panacekX = panacekX;
+            panacekY = panacekY - velikostPohybu;
+            panacek.style.left = panacekX + 'px';
+            panacek.style.top = panacekY + 'px';
+        }
+        if (event.keyCode === 37) {
+            /*doleva*/
+            panacekX = panacekX - velikostPohybu;
+            panacekY = panacekY;
+            panacek.style.left = panacekX + 'px';
+            panacek.style.top = panacekY + 'px';
+        }
+        if (event.keyCode === 39) {
+            /*doprava*/
+            panacekX = panacekX + velikostPohybu;
+            panacekY = panacekY;
+            panacek.style.left = panacekX + 'px';
+            panacek.style.top = panacekY + 'px';
+        }
+    } else {
+        panacekX = panacekX + 10;
+        panacekY = panacekY + 10;
         panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px';
-    }
-    if (event.keyCode === 37) {
-        /*doleva*/
-        panacekX = panacekX - velikostPohybu;
-        panacekY = panacekY;
-        panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px';
-    } else if (event.keyCode === 39) {
-        /*doprava*/
-        panacekX = panacekX + velikostPohybu;
-        panacekY = panacekY;
-        panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px';
+        panacek.style.top = panacekY + 'px'
     }
 }
 
