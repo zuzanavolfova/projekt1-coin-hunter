@@ -9,6 +9,7 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 // sem začni psát svůj program
 
 let panacek = document.querySelector('#panacek')
-
-panacek.style.left = '300px'
-panacek.style.top = '300px'
+let x = 500
+let y = 400
+panacek.style.left = x + 'px'
+panacek.style.top = y + 'px'
