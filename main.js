@@ -10,7 +10,7 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 let panacek = document.querySelector('#panacek')
 let mince = document.querySelector('#mince')
-let score = document.querySelector('#score')
+
 
 let panacekX = 500;
 let panacekY = 400;
@@ -54,8 +54,8 @@ function pohyb(event, velikostPohybu) {
 }
 
 if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
-    scoreVypocet = scoreVypocet + 1;
-    score.textContent = scoreVypocet;
+    scoreVypocet += 1;
+    document.querySelector('#score').textContent = scoreVypocet;
 
     /*přesunout minci*/
 }
