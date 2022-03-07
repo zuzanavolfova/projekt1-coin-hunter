@@ -18,30 +18,27 @@ panacek.style.top = y + 'px'
 
 
 
-function pohyb(elementSelector, velikostPohybu) {
-    /*zjisti key code*/
-    if (keyCode === 40) {
+function pohyb(event, velikostPohybu) {
+    if (event.keyCode === 40) {
         x = x;
         y = y + velikostPohybu;
-        elementSelector.style.left = x + 'px';
-        elementSelector.style.top = y + 'px';
-    } else if (keyCode === 38) {
+        panacek.style.left = x + 'px';
+        panacek.style.top = y + 'px';
+    } else if (event.keyCode === 38) {
         x = x;
         y = y - velikostPohybu;
-        elementSelector.style.left = x + 'px';
-        elementSelector.style.top = y + 'px';
+        panacek.style.left = x + 'px';
+        panacek.style.top = y + 'px';
     }
-    if (keyCode === 37) {
+    if (event.keyCode === 37) {
         x = x - velikostPohybu;
         y = y;
-        elementSelector.style.left = x + 'px';
-        elementSelector.style.top = y + 'px';
-    } else if (keyCode === 39) {
+        panacek.style.left = x + 'px';
+        panacek.style.top = y + 'px';
+    } else if (event.keyCode === 39) {
         x = x + velikostPohybu;
         y = y;
-        elementSelector.style.left = x + 'px';
-        elementSelector.style.top = y + 'px';
+        panacek.style.left = x + 'px';
+        panacek.style.top = y + 'px';
     }
-
-
 }
