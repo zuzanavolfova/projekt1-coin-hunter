@@ -68,6 +68,16 @@ function pohyb(event, velikostPohybu) {
             panacek.style.left = panacekX + 'px';
             panacek.style.top = panacekY + 'px';
         }
+    } else if (panacekX > maxX) {
+        panacekX = maxX - 10;
+        panacekY = panacekY;
+        panacek.style.left = panacekX + 'px';
+        panacek.style.top = panacekY + 'px'
+    } else if (panacekY > maxY) {
+        panacekX = panacekX;
+        panacekY = maxY - 10;
+        panacek.style.left = panacekX + 'px';
+        panacek.style.top = panacekY + 'px'
     } else {
         panacekX = panacekX + 10;
         panacekY = panacekY + 10;
