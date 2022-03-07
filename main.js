@@ -16,6 +16,10 @@ let panacekY = 400;
 
 let minceX = 100;
 let minceY = 200;
+let panacekSirka = 50;
+let panacekVyska = 20;
+let minceSirka = 20;
+let minceVyska = 20;
 
 panacek.style.left = panacekX + 'px'
 panacek.style.top = panacekY + 'px'
@@ -50,5 +54,6 @@ function pohyb(event, velikostPohybu) {
 
 if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
     /* přičíst body
+
     /*přesunout minci*/
 }
