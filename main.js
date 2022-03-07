@@ -9,13 +9,18 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 // sem začni psát svůj program
 
 let panacek = document.querySelector('#panacek')
+let mince = document.querySelector('#mince')
 
 let x = 500;
 let y = 400;
 
+let a = 100;
+let b = 200;
+
 panacek.style.left = x + 'px'
 panacek.style.top = y + 'px'
-
+mince.style.left = a + 'px'
+mince.style.top = b + 'px'
 
 
 function pohyb(event, velikostPohybu) {
