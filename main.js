@@ -28,8 +28,8 @@ let width = window.innerWidth;
 
 panacek.style.left = panacekX + 'px'
 panacek.style.top = panacekY + 'px'
-mince.style.left = Math.random() * 1000 + 'px' /*osetrit pohyb mince*/
-mince.style.top = Math.random() * 1000 + 'px'
+mince.style.left = Math.floor(Math.random() * (width - 1)) + 1 + 'px'
+mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
 
 /*osetrit, aby panacek nevylezl z herniho planu*/
 
@@ -68,8 +68,8 @@ if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pana
     scoreVypocet += 1;
     document.querySelector('#score').textContent = scoreVypocet;
     /*přesunout minci*/
-    mince.style.left = Math.random() * 1000 + 'px' /*osetrit pohyb mince*/
-    mince.style.top = Math.random() * 1000 + 'px'
+    mince.style.left = Math.floor(Math.random() * (width - 1)) + 1 + 'px'
+    mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
 } else(console.log("mimo"))
 
 
