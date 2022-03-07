@@ -41,6 +41,7 @@ function pohyb(event, velikostPohybu) {
         panacek.style.left = panacekX + 'px';
         panacek.style.top = panacekY + 'px';
 
+
     } else if (event.keyCode === 38) {
         /*nahoru*/
         panacekX = panacekX;
@@ -70,7 +71,7 @@ if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pana
     /*přesunout minci*/
     mince.style.left = Math.floor(Math.random() * (width - 1)) + 1 + 'px'
     mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
-} else(console.log("mimo"))
+}
 
 
 if (score === 6) {
