@@ -46,20 +46,18 @@ zvukfanfara = document.querySelector("#zvukfanfara");
 let zvukmince;
 zvukmince = document.querySelector("#zvukmince");
 
-function play(a) {
-    a.play();
-}
 
-function movePanacek(a, b, c, d) {
-    panacekX = a;
-    panacekY = b;
+
+function movePanacek(x, y) {
+    panacekX = x;
+    panacekY = y;
     panacek.style.left = panacekX + 'px';
     panacek.style.top = panacekY + 'px';
 }
 
+
+
 function collectCoin() {
-
-
     if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
         console.log('jsem tu');
         scoreVypocet += 1;
@@ -68,10 +66,10 @@ function collectCoin() {
         minceY = Math.floor(Math.random() * (maxY - 1));
         mince.style.left = minceX + 'px';
         mince.style.top = minceY + 'px';
-        play(zvukmince);
+        zvukmince.play();
         if (scoreVypocet === 2) {
+            zvukfanfara.play();
             alert('Gratuluji. Posbíral/a jsi celý poklad.');
-            play(zvukfanfara);
             scoreVypocet = 0;
             document.querySelector('#score').textContent = scoreVypocet;
             if (mince.src = 'obrazky/mince.png') {
@@ -87,33 +85,37 @@ function move(event, velikostPohybu) {
     if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
         if (event.keyCode === 40) {
             /*dolu*/
-            movePanacek(panacekX, panacekY + velikostPohybu, panacekX + 'px', panacekY + 'px');
+            movePanacek(panacekX, panacekY + velikostPohybu);
             panacek.src = 'obrazky/panacek.png';
         } else if (event.keyCode === 38) {
             /*nahoru*/
-            movePanacek(panacekX, panacekY - velikostPohybu, panacekX + 'px', panacekY + 'px');;
+            movePanacek(panacekX, panacekY - velikostPohybu);
             panacek.src = 'obrazky/panacek-nahoru.png';
         } else if (event.keyCode === 37) {
             /*doleva*/
-            movePanacek(panacekX - velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px');
+            movePanacek(panacekX - velikostPohybu, panacekY);
             panacek.src = 'obrazky/panacek-vlevo.png';
         } else if (event.keyCode === 39) {
             /*doprava*/
-            movePanacek(panacekX + velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px');
+            movePanacek(panacekX + velikostPohybu, panacekY);
             panacek.src = 'obrazky/panacek-vpravo.png';
         }
     }
     /*omezeni pohybu na okno*/
     else if (panacekX >= maxX) {
-        movePanacek(panacekX - 5, panacekY, panacekX + 'px', panacekY + 'px')
+        movePanacek(panacekX - 5, panacekY)
         panacek.src = 'obrazky/panacek.png';
     } else if (panacekY >= maxY) {
-        movePanacek(panacekX, panacekY - 5, panacekX + 'px', panacekY + 'px')
+        movePanacek(panacekX, panacekY - 5)
         panacek.src = 'obrazky/panacek.png';
     } else {
-        movePanacek(panacekX + 5, panacekY + 5, panacekX + 'px', panacekY + 'px')
+        movePanacek(panacekX + 5, panacekY + 5)
         panacek.src = 'obrazky/panacek.png';
     }
     collectCoin();
 
+}
+
+function pauseSound() {
+    hudba.pause()
 }
