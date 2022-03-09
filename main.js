@@ -10,6 +10,7 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 let panacek = document.querySelector('#panacek');
 let mince = document.querySelector('#mince');
+let typMince = 0;
 
 let panacekX = 500;
 let panacekY = 400;
@@ -70,9 +71,8 @@ function checkWinning() {
         alert('Gratuluji. Posbíral/a jsi celý poklad.');
         scoreVypocet = 0;
         document.querySelector('#score').textContent = scoreVypocet;
-        if (mince.src = 'obrazky/mince.png') {
-            mince.src = 'obrazky/mince-bronzova.png';
-        }
+        typMince++;
+        changeTypMince();
     }
 }
 
@@ -85,8 +85,16 @@ function collectCoin() {
     }
 }
 
-
-
+function changeTypMince() {
+    if (typMince === 0) {
+        mince.src = 'obrazky/mince-bronzova.png';
+    } else if (typMince === 1) {
+        mince.src = 'obrazky/mince-stribrna.png';
+    } else if (typMince === 2) {
+        mince.src = 'obrazky/mince.png';
+        typMince = -1;
+    }
+}
 
 function move(event, velikostPohybu) {
     if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
