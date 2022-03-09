@@ -69,22 +69,13 @@ function move(event, velikostPohybu) {
     }
     /*omezeni pohybu na okno*/
     else if (panacekX >= maxX) {
-        panacekX = panacekX - 10;
-        panacekY = panacekY;
-        panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px';
+        movePanacek(panacekX - 5, panacekY, panacekX + 'px', panacekY + 'px')
         panacek.src = 'obrazky/panacek.png'
     } else if (panacekY >= maxY) {
-        panacekX = panacekX;
-        panacekY = panacekY - 10;
-        panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px';
+        movePanacek(panacekX, panacekY - 5, panacekX + 'px', panacekY + 'px')
         panacek.src = 'obrazky/panacek.png'
     } else {
-        panacekX = panacekX + 10;
-        panacekY = panacekY + 10;
-        panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px';
+        movePanacek(panacekX + 5, panacekY + 5, panacekX + 'px', panacekY + 'px')
         panacek.src = 'obrazky/panacek.png'
     }
 }
