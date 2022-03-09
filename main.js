@@ -27,13 +27,16 @@ let minceSirka = 20;
 let minceVyska = 20;
 let scoreVypocet = 0;
 
-let height = window.innerHeight;
+let height = window.innerHeight; //vcetne scroll bar
 let width = window.innerWidth;
+
+/*let height = window.innerHeight; //vcetne scroll bar
+let width = window.innerWidth;*/
 
 panacek.style.left = panacekX + 'px'
 panacek.style.top = panacekY + 'px'
-mince.style.left = Math.floor(Math.random() * (width - 1)) + 1 + 'px'
-mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
+mince.style.left = Math.floor(Math.random() * (height - 1)) + 'px'
+mince.style.top = Math.floor(Math.random() * (width - 1)) + 'px'
 
 /*osetrit, aby panacek nevylezl z herniho planu*/
 
@@ -63,23 +66,26 @@ function move(event, velikostPohybu) {
             movePanacek(panacekX + velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px');
             panacek.src = 'obrazky/panacek-vpravo.png'
         }
-        /*omezeni pohybu na okno*/
-
-    } else if (panacekX > maxX) {
-        panacekX = maxX - 10;
+    }
+    /*omezeni pohybu na okno*/
+    else if (panacekX >= maxX) {
+        panacekX = panacekX - 10;
         panacekY = panacekY;
         panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px'
-    } else if (panacekY > maxY) {
+        panacek.style.top = panacekY + 'px';
+        panacek.src = 'obrazky/panacek.png'
+    } else if (panacekY >= maxY) {
         panacekX = panacekX;
-        panacekY = maxY - 10;
+        panacekY = panacekY - 10;
         panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px'
+        panacek.style.top = panacekY + 'px';
+        panacek.src = 'obrazky/panacek.png'
     } else {
         panacekX = panacekX + 10;
         panacekY = panacekY + 10;
         panacek.style.left = panacekX + 'px';
-        panacek.style.top = panacekY + 'px'
+        panacek.style.top = panacekY + 'px';
+        panacek.src = 'obrazky/panacek.png'
     }
 }
 
