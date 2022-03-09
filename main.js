@@ -47,11 +47,23 @@ function movePanacek(a, b, c, d) {
     panacek.style.top = panacekY + 'px';
 }
 
+function collectCoin() {
+    if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
+        console.log('jsem tu');
+        /*scoreVypocet += 1;
+        document.querySelector('#score').textContent = scoreVypocet;
+        
+        mince.style.left = Math.floor(Math.random() * (width - 1)) + 'px';
+        mince.style.top = Math.floor(Math.random() * (height - 1)) + 'px'*/
+    }
+}
+
 function move(event, velikostPohybu) {
     if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
         if (event.keyCode === 40) {
             /*dolu*/
             movePanacek(panacekX, panacekY + velikostPohybu, panacekX + 'px', panacekY + 'px');
+            collectCoin()
             panacek.src = 'obrazky/panacek.png'
         } else if (event.keyCode === 38) {
             /*nahoru*/
@@ -80,14 +92,7 @@ function move(event, velikostPohybu) {
     }
 }
 
-if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
-    /*pricist bod*/
-    scoreVypocet += 1;
-    document.querySelector('#score').textContent = scoreVypocet;
-    /*přesunout minci*/
-    mince.style.left = Math.floor(Math.random() * (width - 1)) + 1 + 'px'
-    mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
-}
+
 
 
 if (score === 6) {
