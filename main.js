@@ -55,29 +55,36 @@ function movePanacek(x, y) {
     panacek.style.top = panacekY + 'px';
 }
 
+function score() {
+    scoreVypocet += 1;
+    document.querySelector('#score').textContent = scoreVypocet;
+    minceX = Math.floor(Math.random() * (maxX - 1));
+    minceY = Math.floor(Math.random() * (maxY - 1));
+    mince.style.left = minceX + 'px';
+    mince.style.top = minceY + 'px';
+}
 
+function checkWinning() {
+    if (scoreVypocet === 2) {
+        zvukfanfara.play();
+        alert('Gratuluji. Posbíral/a jsi celý poklad.');
+        scoreVypocet = 0;
+        document.querySelector('#score').textContent = scoreVypocet;
+        if (mince.src = 'obrazky/mince.png') {
+            mince.src = 'obrazky/mince-bronzova.png';
+        }
+    }
+}
 
 function collectCoin() {
     if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
         console.log('jsem tu');
-        scoreVypocet += 1;
-        document.querySelector('#score').textContent = scoreVypocet;
-        minceX = Math.floor(Math.random() * (maxX - 1));
-        minceY = Math.floor(Math.random() * (maxY - 1));
-        mince.style.left = minceX + 'px';
-        mince.style.top = minceY + 'px';
+        score();
         zvukmince.play();
-        if (scoreVypocet === 2) {
-            zvukfanfara.play();
-            alert('Gratuluji. Posbíral/a jsi celý poklad.');
-            scoreVypocet = 0;
-            document.querySelector('#score').textContent = scoreVypocet;
-            if (mince.src = 'obrazky/mince.png') {
-                mince.src = 'obrazky/mince-bronzova.png';
-            }
-        }
+        checkWinning();
     }
 }
+
 
 
 
