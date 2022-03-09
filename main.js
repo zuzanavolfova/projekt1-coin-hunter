@@ -48,16 +48,20 @@ function move(event, velikostPohybu) {
     if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
         if (event.keyCode === 40) {
             /*dolu*/
-            movePanacek(panacekX, panacekY + velikostPohybu, panacekX + 'px', panacekY + 'px')
+            movePanacek(panacekX, panacekY + velikostPohybu, panacekX + 'px', panacekY + 'px');
+            panacek.src = 'obrazky/panacek.png'
         } else if (event.keyCode === 38) {
             /*nahoru*/
-            movePanacek(panacekX, panacekY - velikostPohybu, panacekX + 'px', panacekY + 'px');
+            movePanacek(panacekX, panacekY - velikostPohybu, panacekX + 'px', panacekY + 'px');;
+            panacek.src = 'obrazky/panacek-nahoru.png'
         } else if (event.keyCode === 37) {
             /*doleva*/
-            movePanacek(panacekX - velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px')
+            movePanacek(panacekX - velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px');
+            panacek.src = 'obrazky/panacek-vlevo.png'
         } else if (event.keyCode === 39) {
             /*doprava*/
-            movePanacek(panacekX + velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px')
+            movePanacek(panacekX + velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px');
+            panacek.src = 'obrazky/panacek-vpravo.png'
         }
         /*omezeni pohybu na okno*/
 
