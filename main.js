@@ -37,46 +37,30 @@ mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
 
 /*osetrit, aby panacek nevylezl z herniho planu*/
 
-/*function pohniPanackem(a, b, c, d) {
+function movePanacek(a, b, c, d) {
     panacekX = a;
     panacekY = b;
     panacek.style.left = panacekX + 'px';
     panacek.style.top = panacekY + 'px';
-}*/
+}
 
-function pohyb(event, velikostPohybu) {
+function move(event, velikostPohybu) {
     if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
         if (event.keyCode === 40) {
             /*dolu*/
-            panacekX = panacekX;
-            panacekY = panacekY + velikostPohybu;
-            panacek.style.left = panacekX + 'px';
-            panacek.style.top = panacekY + 'px';
-
-
+            movePanacek(panacekX, panacekY + velikostPohybu, panacekX + 'px', panacekY + 'px')
         } else if (event.keyCode === 38) {
             /*nahoru*/
-
-            pohniPanackem(panacekX, panacekY - velikostPohybu, panacekX + 'px', panacekY + 'px');
-            panacekX = panacekX;
-            panacekY = panacekY - velikostPohybu;
-            panacek.style.left = panacekX + 'px';
-            panacek.style.top = panacekY + 'px';
-        }
-        if (event.keyCode === 37) {
+            movePanacek(panacekX, panacekY - velikostPohybu, panacekX + 'px', panacekY + 'px');
+        } else if (event.keyCode === 37) {
             /*doleva*/
-            panacekX = panacekX - velikostPohybu;
-            panacekY = panacekY;
-            panacek.style.left = panacekX + 'px';
-            panacek.style.top = panacekY + 'px';
-        }
-        if (event.keyCode === 39) {
+            movePanacek(panacekX - velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px')
+        } else if (event.keyCode === 39) {
             /*doprava*/
-            panacekX = panacekX + velikostPohybu;
-            panacekY = panacekY;
-            panacek.style.left = panacekX + 'px';
-            panacek.style.top = panacekY + 'px';
+            movePanacek(panacekX + velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px')
         }
+        /*omezeni pohybu na okno*/
+
     } else if (panacekX > maxX) {
         panacekX = maxX - 10;
         panacekY = panacekY;
