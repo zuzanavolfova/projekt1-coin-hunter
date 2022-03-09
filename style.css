@@ -32,7 +32,7 @@ body {
 
 #score {
     position: relative;
-    top: 100px;
+    top: 120px;
     left: 50px;
     font-family: 'Press Start 2P', sans-serif;
     font-size: 36px;
@@ -57,17 +57,21 @@ body {
     font-weight: bold;
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 2px 4px #a45b71;
-    border: #a45b71
+    border: #a45b71;
+    border-radius: 20px;
+    padding: 10px;
 }
 
 .playSound {
     position: relative;
     left: 50px;
     margin-left: 10px;
+    padding: 10px;
     color: #f09cb7;
     font-size: large;
     font-weight: bold;
     background-color: rgb(255, 255, 255);
     box-shadow: 1px 2px 4px #a45b71;
-    border: #a45b71
+    border: #a45b71;
+    border-radius: 20px;
 }
