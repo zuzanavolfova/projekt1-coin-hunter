@@ -31,8 +31,8 @@ body {
 }
 
 #score {
-    position: absolute;
-    top: 50px;
+    position: relative;
+    top: 100px;
     left: 50px;
     font-family: 'Press Start 2P', sans-serif;
     font-size: 36px;
@@ -47,4 +47,15 @@ body {
 
 #panacek {
     z-index: 1;
+}
+
+.pauseSound {
+    position: relative;
+    left: 50px;
+    color: #f09cb7;
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 2px 4px #a45b71;
+    border: #a45b71
 }
