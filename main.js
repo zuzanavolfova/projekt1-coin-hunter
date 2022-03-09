@@ -26,8 +26,8 @@ let minceSirka = 36;
 let minceVyska = 36;
 let scoreVypocet = 0;
 
-let height = window.innerHeight; //vcetne scroll bar
-let width = window.innerWidth;
+let height = window.screen.availHeight; //vcetne scroll bar
+let width = window.screen.availWidth;
 
 /*let height = window.innerHeight; //vcetne scroll bar
 let width = window.innerWidth;*/
