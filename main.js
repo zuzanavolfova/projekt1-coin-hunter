@@ -37,6 +37,13 @@ mince.style.top = Math.floor(Math.random() * (height - 1)) + 1 + 'px'
 
 /*osetrit, aby panacek nevylezl z herniho planu*/
 
+/*function pohniPanackem(a, b, c, d) {
+    panacekX = a;
+    panacekY = b;
+    panacek.style.left = panacekX + 'px';
+    panacek.style.top = panacekY + 'px';
+}*/
+
 function pohyb(event, velikostPohybu) {
     if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
         if (event.keyCode === 40) {
@@ -49,6 +56,8 @@ function pohyb(event, velikostPohybu) {
 
         } else if (event.keyCode === 38) {
             /*nahoru*/
+
+            pohniPanackem(panacekX, panacekY - velikostPohybu, panacekX + 'px', panacekY + 'px');
             panacekX = panacekX;
             panacekY = panacekY - velikostPohybu;
             panacek.style.left = panacekX + 'px';
