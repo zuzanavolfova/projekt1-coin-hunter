@@ -8,8 +8,10 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 
 // sem začni psát svůj program
 
-let panacek = document.querySelector('#panacek')
-let mince = document.querySelector('#mince')
+let panacek = document.querySelector('#panacek');
+let mince = document.querySelector('#mince');
+
+let zvukmince = document.querySelector('#zvukmince');
 
 
 let panacekX = 500;
@@ -40,6 +42,10 @@ mince.style.top = minceY + 'px';
 
 /*osetrit, aby panacek nevylezl z herniho planu*/
 
+function play(a) {
+    a.play()
+}
+
 function movePanacek(a, b, c, d) {
     panacekX = a;
     panacekY = b;
@@ -59,11 +65,13 @@ function collectCoin() {
         minceY = Math.floor(Math.random() * (maxY - 1));
         mince.style.left = minceX + 'px';
         mince.style.top = minceY + 'px';
-        if (scoreVypocet === 6) {
-            alert('Gratuluji. Posbíral jsi celý poklad.')
+        if (scoreVypocet === 2) {
+            alert('Gratuluji. Posbíral jsi celý poklad.');
+            let zvukfanfara = document.querySelector('#zvukfanfara');
+            zvukfanfara.play();
         }
+
     }
-    console.log(minceX, panacekX)
 }
 
 
@@ -107,4 +115,11 @@ function move(event, velikostPohybu) {
 
     }
     collectCoin();
+
 }
+
+/*V průběhu hry bude hrát zvukový podkres. -
+    Při sebrání mince přehrajeme zvuk. -
+    Přidáme score a při sebrání mince přičítáme. -
+    Při score > 5 přehrajeme fanfáru a zobrazíme vítěznou hlášku. -
+    Při posunu panáčka ho natočíme do správného směru.*/
