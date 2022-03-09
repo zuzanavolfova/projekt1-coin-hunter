@@ -23,6 +23,7 @@ let panacekVyska = 70;
 let minceSirka = 36;
 let minceVyska = 36;
 let scoreVypocet = 0;
+let vitezneScore = 5;
 
 let height = window.screen.availHeight; //vcetne scroll bar
 let width = window.screen.availWidth;
@@ -66,7 +67,7 @@ function score() {
 }
 
 function checkWinning() {
-    if (scoreVypocet === 2) {
+    if (scoreVypocet === vitezneScore) {
         zvukfanfara.play();
         alert('Gratuluji. Posbíral/a jsi celý poklad.');
         scoreVypocet = 0;
