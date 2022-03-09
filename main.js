@@ -38,6 +38,9 @@ mince.style.left = minceX + 'px';
 mince.style.top = minceY + 'px';
 
 /*osetrit, aby panacek nevylezl z herniho planu*/
+
+let hudba;
+hudba = document.querySelector("#hudba");
 let zvukfanfara;
 zvukfanfara = document.querySelector("#zvukfanfara");
 let zvukmince;
