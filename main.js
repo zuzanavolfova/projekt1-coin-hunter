@@ -119,3 +119,7 @@ function move(event, velikostPohybu) {
 function pauseSound() {
     hudba.pause()
 }
+
+function playSound() {
+    hudba.play()
+}

@@ -59,3 +59,15 @@ body {
     box-shadow: 1px 2px 4px #a45b71;
     border: #a45b71
 }
+
+.playSound {
+    position: relative;
+    left: 50px;
+    margin-left: 10px;
+    color: #f09cb7;
+    font-size: large;
+    font-weight: bold;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 1px 2px 4px #a45b71;
+    border: #a45b71
+}
