@@ -117,9 +117,3 @@ function move(event, velikostPohybu) {
     collectCoin();
 
 }
-
-/*V průběhu hry bude hrát zvukový podkres. -
-    Při sebrání mince přehrajeme zvuk. -
-    Přidáme score a při sebrání mince přičítáme. -
-    Při score > 5 přehrajeme fanfáru a zobrazíme vítěznou hlášku. -
-    Při posunu panáčka ho natočíme do správného směru.*/
