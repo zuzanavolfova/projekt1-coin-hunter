@@ -11,9 +11,6 @@ if (!( panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || pan
 let panacek = document.querySelector('#panacek');
 let mince = document.querySelector('#mince');
 
-let zvukmince = document.querySelector('#zvukmince');
-
-
 let panacekX = 500;
 let panacekY = 400;
 
@@ -43,6 +40,8 @@ mince.style.top = minceY + 'px';
 /*osetrit, aby panacek nevylezl z herniho planu*/
 let zvukfanfara;
 zvukfanfara = document.querySelector("#zvukfanfara");
+let zvukmince;
+zvukmince = document.querySelector("#zvukmince");
 
 function play(a) {
     a.play();
@@ -60,20 +59,22 @@ function collectCoin() {
 
     if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
         console.log('jsem tu');
-
         scoreVypocet += 1;
         document.querySelector('#score').textContent = scoreVypocet;
         minceX = Math.floor(Math.random() * (maxX - 1));
         minceY = Math.floor(Math.random() * (maxY - 1));
         mince.style.left = minceX + 'px';
         mince.style.top = minceY + 'px';
-        if (scoreVypocet === 6) {
+        play(zvukmince);
+        if (scoreVypocet === 2) {
             alert('Gratuluji. Posbíral/a jsi celý poklad.');
+            play(zvukfanfara);
             scoreVypocet = 0;
             document.querySelector('#score').textContent = scoreVypocet;
-            play(zvukfanfara);
+            if (mince.src = 'obrazky/mince.png') {
+                mince.src = 'obrazky/mince-bronzova.png';
+            }
         }
-
     }
 }
 
@@ -85,18 +86,14 @@ function move(event, velikostPohybu) {
             /*dolu*/
             movePanacek(panacekX, panacekY + velikostPohybu, panacekX + 'px', panacekY + 'px');
             panacek.src = 'obrazky/panacek.png';
-
-
         } else if (event.keyCode === 38) {
             /*nahoru*/
             movePanacek(panacekX, panacekY - velikostPohybu, panacekX + 'px', panacekY + 'px');;
             panacek.src = 'obrazky/panacek-nahoru.png';
-
         } else if (event.keyCode === 37) {
             /*doleva*/
             movePanacek(panacekX - velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px');
             panacek.src = 'obrazky/panacek-vlevo.png';
-
         } else if (event.keyCode === 39) {
             /*doprava*/
             movePanacek(panacekX + velikostPohybu, panacekY, panacekX + 'px', panacekY + 'px');
@@ -107,15 +104,12 @@ function move(event, velikostPohybu) {
     else if (panacekX >= maxX) {
         movePanacek(panacekX - 5, panacekY, panacekX + 'px', panacekY + 'px')
         panacek.src = 'obrazky/panacek.png';
-        c
     } else if (panacekY >= maxY) {
         movePanacek(panacekX, panacekY - 5, panacekX + 'px', panacekY + 'px')
         panacek.src = 'obrazky/panacek.png';
-
     } else {
         movePanacek(panacekX + 5, panacekY + 5, panacekX + 'px', panacekY + 'px')
         panacek.src = 'obrazky/panacek.png';
-
     }
     collectCoin();
 
