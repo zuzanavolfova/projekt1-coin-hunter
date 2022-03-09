@@ -21,10 +21,10 @@ let minceY = 200;
 let maxX = window.screen.availWidth;
 let maxY = window.screen.availHeight;
 
-let panacekSirka = 50;
-let panacekVyska = 20;
-let minceSirka = 20;
-let minceVyska = 20;
+let panacekSirka = 64;
+let panacekVyska = 70;
+let minceSirka = 36;
+let minceVyska = 36;
 let scoreVypocet = 0;
 
 let height = window.innerHeight; //vcetne scroll bar
@@ -50,18 +50,18 @@ function movePanacek(a, b, c, d) {
 function collectCoin() {
     if (!(panacekX + panacekSirka < minceX || minceX + minceSirka < panacekX || panacekY + panacekVyska < minceY || minceY + minceVyska < panacekY)) {
         console.log('jsem tu');
+
         scoreVypocet += 1;
         document.querySelector('#score').textContent = scoreVypocet;
         mince.style.left = Math.floor(Math.random() * (width - 1)) + 'px';
-        mince.style.top = Math.floor(Math.random() * (height - 1)) + 'px'
+        mince.style.top = Math.floor(Math.random() * (height - 1)) + 'px';
+        if (scoreVypocet === 6) {
+            alert('Gratuluji. Posbíral jsi celý poklad.')
+        }
     }
 }
 
-
-/*
-mince.style.left = Math.floor(Math.random() * (width - 1)) + 'px';
-mince.style.top = Math.floor(Math.random() * (height - 1)) + 'px' */
-
+console.log(parseInt)
 
 function move(event, velikostPohybu) {
     if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
@@ -69,6 +69,7 @@ function move(event, velikostPohybu) {
             /*dolu*/
             movePanacek(panacekX, panacekY + velikostPohybu, panacekX + 'px', panacekY + 'px');
             panacek.src = 'obrazky/panacek.png';
+
             collectCoin()
 
         } else if (event.keyCode === 38) {
@@ -102,11 +103,4 @@ function move(event, velikostPohybu) {
         panacek.src = 'obrazky/panacek.png';
         collectCoin()
     }
-}
-
-
-
-
-if (score === 6) {
-    alert('Posbíral jsi celý poklad')
 }
