@@ -41,9 +41,11 @@ mince.style.left = minceX + 'px';
 mince.style.top = minceY + 'px';
 
 /*osetrit, aby panacek nevylezl z herniho planu*/
+let zvukfanfara;
+zvukfanfara = document.querySelector("#zvukfanfara");
 
 function play(a) {
-    a.play()
+    a.play();
 }
 
 function movePanacek(a, b, c, d) {
@@ -65,10 +67,11 @@ function collectCoin() {
         minceY = Math.floor(Math.random() * (maxY - 1));
         mince.style.left = minceX + 'px';
         mince.style.top = minceY + 'px';
-        if (scoreVypocet === 2) {
-            alert('Gratuluji. Posbíral jsi celý poklad.');
-            let zvukfanfara = document.querySelector('#zvukfanfara');
-            zvukfanfara.play();
+        if (scoreVypocet === 6) {
+            alert('Gratuluji. Posbíral/a jsi celý poklad.');
+            scoreVypocet = 0;
+            document.querySelector('#score').textContent = scoreVypocet;
+            play(zvukfanfara);
         }
 
     }
