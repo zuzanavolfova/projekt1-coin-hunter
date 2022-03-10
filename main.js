@@ -127,7 +127,6 @@ function move(event, velikostPohybu) {
     collectCoin();
 
 }
-let button = document.querySelector('.button');
 
 function pauseSound() {
     hudba.pause();
