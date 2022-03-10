@@ -31,12 +31,10 @@ body {
 }
 
 .menu {
-    position: relative;
     box-shadow: 1px 2px 4px #f09cb7;
 }
 
 #score {
-    position: relative;
     padding: 20px;
     font-family: 'Press Start 2P', sans-serif;
     font-size: 36px;
@@ -54,7 +52,6 @@ body {
 }
 
 .button {
-    position: relative;
     margin: 10px;
     padding: 10px;
     color: #f09cb7;
