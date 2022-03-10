@@ -23,7 +23,7 @@ let panacekVyska = 70;
 let minceSirka = 36;
 let minceVyska = 36;
 let scoreVypocet = 0;
-let vitezneScore = 5;
+let vitezneScore = 1;
 
 let height = window.screen.availHeight; //vcetne scroll bar
 let width = window.screen.availWidth;
@@ -116,9 +116,7 @@ function move(event, velikostPohybu) {
             movePanacek(panacekX + velikostPohybu, panacekY);
             panacek.src = 'obrazky/panacek-vpravo.png';
         }
-    }
-    /*omezeni pohybu na okno*/
-    else if (panacekX >= maxX) {
+    } else if (panacekX >= maxX) {
         movePanacek(panacekX - 5, panacekY)
         panacek.src = 'obrazky/panacek.png';
     } else if (panacekY >= maxY) {

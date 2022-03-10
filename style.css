@@ -22,7 +22,7 @@ body {
     background-image: url('obrazky/pozadi/geometry.png');
     /*  vyzkoušej i jiná pozadí :)
 	background-image: url('obrazky/pozadi/round.png');
-)	background-image: url('obrazky/pozadi/whirlpool.png');
+	background-image: url('obrazky/pozadi/whirlpool.png');
 	background-image: url('obrazky/pozadi/weather.png');
 	background-image: url('obrazky/pozadi/swirl.png');
 	background-image: url('obrazky/pozadi/seigaiha.png');
@@ -49,20 +49,7 @@ body {
     z-index: 1;
 }
 
-.pauseSound {
-    position: relative;
-    left: 50px;
-    color: #f09cb7;
-    font-size: large;
-    font-weight: bold;
-    background-color: rgb(255, 255, 255);
-    box-shadow: 1px 2px 4px #a45b71;
-    border: #a45b71;
-    border-radius: 20px;
-    padding: 10px;
-}
-
-.playSound {
+.button {
     position: relative;
     left: 50px;
     margin-left: 10px;
