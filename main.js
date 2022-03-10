@@ -39,8 +39,6 @@ let minceY = Math.floor(Math.random() * (maxY - hraniceMenuY)) + hraniceMenuY;
 mince.style.left = minceX + 'px';
 mince.style.top = minceY + 'px';
 
-/*osetrit, aby panacek nevylezl z herniho planu*/
-
 let hudba;
 hudba = document.querySelector("#hudba");
 let zvukfanfara;
