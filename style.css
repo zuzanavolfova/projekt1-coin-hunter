@@ -30,10 +30,14 @@ body {
 	*/
 }
 
+.menu {
+    position: relative;
+    box-shadow: 1px 2px 4px #f09cb7;
+}
+
 #score {
     position: relative;
-    top: 120px;
-    left: 50px;
+    padding: 20px;
     font-family: 'Press Start 2P', sans-serif;
     font-size: 36px;
     z-index: 999;
@@ -51,8 +55,7 @@ body {
 
 .button {
     position: relative;
-    left: 50px;
-    margin-left: 10px;
+    margin: 10px;
     padding: 10px;
     color: #f09cb7;
     font-size: large;
@@ -61,4 +64,9 @@ body {
     box-shadow: 1px 2px 4px #a45b71;
     border: #a45b71;
     border-radius: 20px;
+}
+
+.button:hover {
+    color: white;
+    background-color: #f09cb7;
 }

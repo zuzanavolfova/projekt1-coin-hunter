@@ -11,20 +11,20 @@
 </head>
 
 <body onkeydown="move(event, 20)">
+    <nav class="menu">
+        <button class="button" onclick="pauseSound()">Pause sound</button>
+        <button class="button" onclick="playSound()">Play sound</button>
+        <div id="score">0</div>
+    </nav>
     <img id="panacek" src="obrazky/panacek.png" alt="Panáček">
-
-    <div id="score">0</div>
-
     <img id="mince" src="obrazky/mince-bronzova.png" alt="Mince">
-
 
     <audio id="hudba" src="zvuky/hudba.mp3" autoplay loop></audio>
 
     <audio id="zvukmince" src="zvuky/mince.mp3"></audio>
 
     <audio id="zvukfanfara" src="zvuky/fanfara.mp3"></audio>
-    <button class="button" onclick="pauseSound()">Pause sound</button>
-    <button class="button" onclick="playSound()">Play sound</button>
+
 
     <script src="main.js"></script>
 </body>

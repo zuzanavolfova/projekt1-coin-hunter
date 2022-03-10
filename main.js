@@ -23,7 +23,10 @@ let panacekVyska = 70;
 let minceSirka = 36;
 let minceVyska = 36;
 let scoreVypocet = 0;
-let vitezneScore = 1;
+let vitezneScore = 5;
+
+let hraniceMenuX = 0;
+let hraniceMenuY = 160;
 
 let height = window.screen.availHeight; //vcetne scroll bar
 let width = window.screen.availWidth;
@@ -34,8 +37,8 @@ let width = window.innerWidth;*/
 panacek.style.left = panacekX + 'px'
 panacek.style.top = panacekY + 'px'
 
-let minceX = Math.floor(Math.random() * (maxX - 1));
-let minceY = Math.floor(Math.random() * (maxY - 1));
+let minceX = Math.floor(Math.random() * (maxX - hraniceMenuX)) + hraniceMenuX;
+let minceY = Math.floor(Math.random() * (maxY - hraniceMenuY)) + hraniceMenuY;
 mince.style.left = minceX + 'px';
 mince.style.top = minceY + 'px';
 
@@ -60,8 +63,8 @@ function movePanacek(x, y) {
 function score() {
     scoreVypocet += 1;
     document.querySelector('#score').textContent = scoreVypocet;
-    minceX = Math.floor(Math.random() * (maxX - 1));
-    minceY = Math.floor(Math.random() * (maxY - 1));
+    minceX = Math.floor(Math.random() * (maxX - hraniceMenuX)) + hraniceMenuX;
+    minceY = Math.floor(Math.random() * (maxY - hraniceMenuY)) + hraniceMenuY;
     mince.style.left = minceX + 'px';
     mince.style.top = minceY + 'px';
 }
@@ -98,7 +101,7 @@ function changeTypMince() {
 }
 
 function move(event, velikostPohybu) {
-    if (panacekX < maxX && panacekX > 0 && panacekY < maxY && panacekY > 0) {
+    if (panacekX < maxX && panacekX > hraniceMenuX && panacekY < maxY && panacekY > hraniceMenuY) {
         if (event.keyCode === 40) {
             /*dolu*/
             movePanacek(panacekX, panacekY + velikostPohybu);
@@ -129,9 +132,10 @@ function move(event, velikostPohybu) {
     collectCoin();
 
 }
+let button = document.querySelector('.button');
 
 function pauseSound() {
-    hudba.pause()
+    hudba.pause();
 }
 
 function playSound() {
