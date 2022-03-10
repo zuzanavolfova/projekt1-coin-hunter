@@ -18,11 +18,7 @@ let maxY = window.innerHeight - 70;
 let maxX = window.innerWidth - 70;
 let width = window.screen.availWidth - 70;
 let heigh = window.screen.availHeight - 70;
-/*let maxX = window.screen.availWidth;
-let maxY = window.screen.availHeight;
 
-let height = window.innerHeight;
-let width = window.innerWidth;*/
 let panacekSirka = 64;
 let panacekVyska = 70;
 let minceSirka = 36;
