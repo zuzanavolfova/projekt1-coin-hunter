@@ -12,8 +12,6 @@ let panacek = document.querySelector('#panacek');
 let mince = document.querySelector('#mince');
 let typMince = 0;
 
-
-
 let maxY = window.innerHeight - 70;
 let maxX = window.innerWidth - 70;
 let width = window.screen.availWidth - 70;
@@ -45,8 +43,6 @@ let zvukfanfara;
 zvukfanfara = document.querySelector("#zvukfanfara");
 let zvukmince;
 zvukmince = document.querySelector("#zvukmince");
-
-
 
 function movePanacek(x, y) {
     panacekX = x;
@@ -125,7 +121,6 @@ function move(event, velikostPohybu) {
         panacek.src = 'obrazky/panacek.png';
     }
     collectCoin();
-
 }
 
 function pauseSound() {
