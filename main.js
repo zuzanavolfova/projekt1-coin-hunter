@@ -12,12 +12,17 @@ let panacek = document.querySelector('#panacek');
 let mince = document.querySelector('#mince');
 let typMince = 0;
 
-let panacekX = 500;
-let panacekY = 400;
 
-let maxX = window.screen.availWidth;
+
+let maxY = window.innerHeight - 70;
+let maxX = window.innerWidth - 70;
+let width = window.screen.availWidth - 70;
+let heigh = window.screen.availHeight - 70;
+/*let maxX = window.screen.availWidth;
 let maxY = window.screen.availHeight;
 
+let height = window.innerHeight;
+let width = window.innerWidth;*/
 let panacekSirka = 64;
 let panacekVyska = 70;
 let minceSirka = 36;
@@ -28,12 +33,8 @@ let vitezneScore = 5;
 let hraniceMenuX = 0;
 let hraniceMenuY = 160;
 
-let height = window.screen.availHeight; //vcetne scroll bar
-let width = window.screen.availWidth;
-
-/*let height = window.innerHeight; //vcetne scroll bar
-let width = window.innerWidth;*/
-
+let panacekX = 500;
+let panacekY = 400;
 panacek.style.left = panacekX + 'px'
 panacek.style.top = panacekY + 'px'
 
