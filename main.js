@@ -111,13 +111,13 @@ function move(event, velikostPohybu) {
             panacek.src = 'obrazky/panacek-vpravo.png';
         }
     } else if (panacekX >= maxX) {
-        movePanacek(panacekX - 5, panacekY)
+        movePanacek(window.innerWidth - panacekSirka, panacekY)
         panacek.src = 'obrazky/panacek.png';
     } else if (panacekY >= maxY) {
-        movePanacek(panacekX, panacekY - 5)
+        movePanacek(panacekX, window.innerHeight - panacekVyska)
         panacek.src = 'obrazky/panacek.png';
     } else {
-        movePanacek(panacekX + 5, panacekY + 5)
+        movePanacek(window.innerWidth + panacekSirka, window.innerHeight + panacekVyska)
         panacek.src = 'obrazky/panacek.png';
     }
     collectCoin();
