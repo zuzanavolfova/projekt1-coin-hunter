@@ -17,10 +17,10 @@ let maxX = window.innerWidth - 70;
 let width = window.screen.availWidth - 70;
 let heigh = window.screen.availHeight - 70;
 
-let panacekSirka = panacek.width;
-let panacekVyska = panacek.heigh;
-let minceSirka = mince.width;
-let minceVyska = mince.heigh;
+let panacekSirka = 64;
+let panacekVyska = 70;
+let minceSirka = 36;
+let minceVyska = 36;
 let scoreVypocet = 0;
 let vitezneScore = 5;
 
@@ -111,13 +111,13 @@ function move(event, velikostPohybu) {
             panacek.src = 'obrazky/panacek-vpravo.png';
         }
     } else if (panacekX >= maxX) {
-        movePanacek(window.innerWidth - panacekSirka, panacekY)
+        movePanacek(panacekX - 5, panacekY)
         panacek.src = 'obrazky/panacek.png';
     } else if (panacekY >= maxY) {
-        movePanacek(panacekX, window.innerHeight - panacekVyska)
+        movePanacek(panacekX, panacekY - 5)
         panacek.src = 'obrazky/panacek.png';
     } else {
-        movePanacek(window.innerWidth + panacekSirka, window.innerHeight + panacekVyska)
+        movePanacek(panacekX + 5, panacekY + 5)
         panacek.src = 'obrazky/panacek.png';
     }
     collectCoin();
