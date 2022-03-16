@@ -17,10 +17,10 @@ let maxX = window.innerWidth - 70;
 let width = window.screen.availWidth - 70;
 let heigh = window.screen.availHeight - 70;
 
-let panacekSirka = 64;
-let panacekVyska = 70;
-let minceSirka = 36;
-let minceVyska = 36;
+let panacekSirka = panacek.width;
+let panacekVyska = panacek.heigh;
+let minceSirka = mince.width;
+let minceVyska = mince.heigh;
 let scoreVypocet = 0;
 let vitezneScore = 5;
 
